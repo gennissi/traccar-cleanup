@@ -1,0 +1,7 @@
+# Traccar cleanup at 03:15 every night.
+# Install with: sudo crontab -e  (and paste the line below)
+# flock -n stops a second copy starting if the previous run is still going.
+15 3 * * * flock -n /run/traccar-cleanup.lock /usr/local/bin/traccar-cleanup.sh >> /var/log/traccar-cleanup.log 2>&1
+
+# Keep 180 days instead of 90:
+# 15 3 * * * DAYS=180 flock -n /run/traccar-cleanup.lock /usr/local/bin/traccar-cleanup.sh >> /var/log/traccar-cleanup.log 2>&1

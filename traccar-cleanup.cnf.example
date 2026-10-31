@@ -1,0 +1,5 @@
+# Copy to /etc/traccar-cleanup.cnf and run: sudo chmod 600 /etc/traccar-cleanup.cnf
+[client]
+user=traccar_cleanup
+password=CHANGE_ME
+host=127.0.0.1
